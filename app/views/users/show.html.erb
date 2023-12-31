@@ -5,10 +5,13 @@
     <% end %>
 
     <%= render @user %>
-    <p>
-      <strong>Posts:</strong>
-      <%= @user.microposts.first.content %>
-    </p>
+
+    <h1><%= @user.name %>'s Microposts</h1>
+
+    <% @user.microposts.each do |micropost| %>
+      <p><%= micropost.content %></p>
+      <!-- More details about the micropost can be added here -->
+    <% end %>
 
     <%= link_to "Edit this user", edit_user_path(@user), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
