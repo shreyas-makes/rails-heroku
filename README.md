@@ -1,24 +1,51 @@
-# README
+The following is a sample ruby on rails application deployed on Heroku with a postgresql database on the backend. Steps involved in creating this application:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+rails new rails_heroku -d postgresql -c tailwind
+```
 
-Things you may want to cover:
+This creates a new rails application with postgresql for the backend, and tailwind CSS for the frontend UI. Enter the directory using:
 
-* Ruby version
+```
+cd rails_heroku/
+```
+Migrate the database using:
 
-* System dependencies
+```
+bin/rails db:migrate
+```
 
-* Configuration
+After this, setup the database:
+```
+rails db:setup
+```
 
-* Database creation
+Create a scaffold to test if the database is running on the backend:
+```
+rails generate scaffold User name:string email:string
+```
+Git add and commit the repository. Initiate heroku and then create an heroku app using:
+```
+heroku creare app-name
+```
 
-* Database initialization
+Add the postgresql add-on to the heroku database. Check if the postgresql add-on is working using:
+```
+heroku apps:info
+```
 
-* How to run the test suite
+After this, migrate the db to the postgresql database provided by heroku:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+heroku run rake db:migrate -a rails-heroku
+```
 
-* Deployment instructions
+After all these steps, push the application to heroku:
 
-* ...
+```
+git push heroku main
+```
+
+
+
+
