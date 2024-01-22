@@ -8,6 +8,8 @@ This creates a new rails application with postgresql for the backend, and tailwi
 
 ```
 cd rails_heroku/
+bundle install
+bundle lock --add-platform x86_64-linux
 ```
 Migrate the database using:
 
