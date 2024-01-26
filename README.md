@@ -48,6 +48,10 @@ After all these steps, push the application to heroku:
 git push heroku main
 ```
 
+To try out the console on the heroku postgresQL server:
 
+```
+ heroku run rails console -a your-app-name
+```
 
 
