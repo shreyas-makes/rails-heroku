@@ -53,5 +53,9 @@ To try out the console on the heroku postgresQL server:
 ```
  heroku run rails console -a your-app-name
 ```
+For Tailwind to be rendered properly locally, enter:
 
+```
+rails assets:precompile
+```
 
